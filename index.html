@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>linkedin auth</title>
+  <script>
+    const linkedInAuth = () => {
+      var clientId = '77vm2tmsvi4ab8';
+      var redirectUrl = 'http://localhost:3000/success';
+      var oauthurl = 'https://www.linkedin.com/oauth/v2/authorization?response_type=code';
+      var scope = 'r_liteprofile%20r_emailaddress';
+      var state = '12345';
+      const oauthUrl = `${oauthurl}&client_id=${clientId}&scope=${scope}&state=${state}&redirect_uri=${redirectUrl}`;
+      window.open(oauthUrl, '_self');
+    }
+  </script>
+
+<body>
+  <div style="display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;">
+    <a id="linkedin-button" class="btn btn-primary btn-lg btn-social btn-linkedin" onclick="linkedInAuth()">
+      <i class="fa-brands fa-linkedin" aria-hidden="true"></i> Sign in with Linkedin
+    </a>
+  </div>
+</body>
+
+</html>
